@@ -3,7 +3,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = push_swap
 
-SRC = src/main.c src/parse.c src/stack_addfront.c src/stack_clear.c src/stack_newnode.c \
+SRC = src/main.c src/parse.c src/stack_addback.c src/stack_clear.c src/stack_newnode.c \
       libft/ft_atoi.c libft/ft_isdigit.c libft/ft_strlen.c libft/ft_split.c libft/ft_putstr.c \
 	  libft/ft_putchar_fd.c libft/ft_putnbr_fd.c libft/ft_strjoin.c libft/ft_memcpy.c \
 	  src/process_number.c src/free_array.c src/parse_utils.c

@@ -6,7 +6,7 @@
 /*   By: ilallali <ilallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 14:26:55 by ilallali          #+#    #+#             */
-/*   Updated: 2025/02/09 18:06:48 by ilallali         ###   ########.fr       */
+/*   Updated: 2025/02/14 16:19:19 by ilallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ int	process_single_argument(char *arg, t_stack **stack_a)
 	int		i;
 
 	if (arg[0] == '\0') 
-	{
 		return (0);
-	}
 	arr = ft_split(arg, ' ');
 	if (!arr)
 		return (0);
@@ -34,6 +32,8 @@ int	process_single_argument(char *arg, t_stack **stack_a)
 			free_array(arr);
 			return (0);
 		}
+		if (!arr[i])
+			return (0);
 		i++;
 	}
 	free_array(arr);
@@ -62,7 +62,8 @@ int	parse_args(int ac, char **av, t_stack **stack_a)
 			return (stack_clear(stack_a), 0);
 		i++;
 	}
-
+	if (!valid_stack(*stack_a))
+		return (stack_clear(stack_a), 0);
 	if (has_duplicates(*stack_a))
 		return (stack_clear(stack_a), 0);
 	return (1);

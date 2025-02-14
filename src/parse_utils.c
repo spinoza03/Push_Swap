@@ -6,7 +6,7 @@
 /*   By: ilallali <ilallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 18:01:22 by ilallali          #+#    #+#             */
-/*   Updated: 2025/02/09 18:01:34 by ilallali         ###   ########.fr       */
+/*   Updated: 2025/02/14 16:29:07 by ilallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,21 @@ void	add_node(t_stack **stack_a, int value)
 	new_node = stack_new_node(value);
 	if (!new_node)
 		return;
-	stack_add_front(stack_a, new_node);
+	stack_add_back(stack_a, new_node);
 }
-
-int	is_valid_integer(char *str)
+int valid_stack(t_stack *stack)
 {
-	if (!str || !*str)
-		return (0);
-	if (*str == '-' || *str == '+')
-		str++;
-	if (!*str) // Prevents just "-" or "+"
-		return (0);
-	while (*str)
+	t_stack *current;
+	int		i;
+
+	i = 0;
+	current = stack;
+	while (current)
 	{
-		if (!ft_isdigit(*str))
-			return (0);
-		str++;
+		i++;
+		current = current->next;
 	}
-	return (1);
+	return (i >= 1);
 }
 
 int	has_duplicates(t_stack *stack)

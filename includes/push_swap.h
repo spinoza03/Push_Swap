@@ -23,8 +23,11 @@ t_stack	*stack_new_node(int value);
 void    add_node(t_stack **stack, int value);
 void    free_stack(t_stack **stack);
 void	stack_clear(t_stack **stack);
-void	stack_add_front(t_stack **stack, t_stack *new_node);
+void	stack_add_back(t_stack **stack, t_stack *new_node);
 int	process_numbers(char *str, t_stack **stack_a);
+int	check_num(char *str);
+int	check_arr(char **arr);
+int valid_stack(t_stack *stack);
 void	free_array(char **arr);
 
 #endif

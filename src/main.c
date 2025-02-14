@@ -6,7 +6,7 @@
 /*   By: ilallali <ilallali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 22:53:47 by ilallali          #+#    #+#             */
-/*   Updated: 2025/02/08 18:48:43 by ilallali         ###   ########.fr       */
+/*   Updated: 2025/02/14 16:26:45 by ilallali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@ int main(int argc, char **argv)
 
     stack_a = NULL;
 
-    if (argc < 2)
+    if (argc == 1)
     {
-        ft_putstr_fd("Error\n", 2);
         return (1);
     }
 
